@@ -7,5 +7,5 @@ var stripLoader = {
 	loader: WebpackStrip.loader('console.log')
 }
 
-devConfig.module.loaders.push(stripLoader);
+devConfig.module.rules.push(stripLoader);
 module.exports = devConfig;

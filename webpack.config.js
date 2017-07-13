@@ -11,16 +11,30 @@ module.exports = {
 					test: /\.js$/,
 					exclude: /node_modules/,
 					loader: 'jshint-loader'
+				},
+				{
+					test: /\.(es6|js|jsx)$/,
+					use: [
+							{
+			            		loader: 'babel-loader',
+			           			options: {
+			              		presets: ['es2015'],
+			            	},
+			          	},
+			        ]
 				}
-			],
+			]
 	
-		loaders: [
+/*		loaders: [
 			{
-				test: /\.es6$/,
+				test:  /\.(es6|js|jsx)$/,
 				exclude: /node_modules/,
-				loader: "babel-loader"
+				loader: "babel-loader",
+				options: {
+					presets: ['es2015']
+				}
 			}
-		]
+		]*/
 	},
 	resolve: {
 		extensions: [' ', '.js', '.es6']
